@@ -2,26 +2,64 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Neighborhood Map</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <title>Neighborhood Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <!-- Project CSS -->
-    <link rel="stylesheet" href="static/css/styles.css">
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <!-- Project CSS -->
+  <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
 <body>
-    <div class="container-fluid">
-    </div>
+  <div class="container-fluid">
+    <div class="row vh-100">
+      <div class="col-sm-12 col-md-3 p-0 sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <h4 class="text-center">Discover Dubai!</h4>
+        </div>
+        <form class="filter pt-2">
+          <div class="input-group p-sm-1 p-md-2">
+            <input type="search" class="form-control" id="filter-input" placeholder="Filter by location">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-block btn-primary">Go!</button>
+            </span>
+          </div>
+        </form>
+      </div>
 
-    <!-- Start External JS dependencies (Bootstrap 4) -->
-    <!-- Using complete (minified) jquery instead of the slim req by Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <!-- End External JS dependencies -->
+      <div class="col p-0 main">
+        <nav class="navbar navbar-dark">
+          <!-- Navbar content -->
+          <button class="navbar-toggler" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+        <main>
+          <div id="map"></div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start External JS dependencies (Bootstrap 4) -->
+  <!-- Using complete (minified) jquery instead of the slim req by Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <!-- End External JS dependencies -->
+
+  <!-- Knockout JS -->
+  <script src="static/js/knockout-3.4.2.js"></script>
+
+  <!-- Project JS -->
+  <script src="static/js/project.js"></script>
+
+  <!-- Google Maps -->
+  <!-- <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9iHEJWJxwE4GKWZ5v9kXeCHyst0aKE8g&v=3&callback=initMap">
+  </script> -->
 </body>
 
 </html>

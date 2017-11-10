@@ -1,1 +1,32 @@
 // Project related custom CSS
+html, body {
+    height: 100vh;
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+.sidebar-header {
+    padding-top: 1rem;
+}
+
+.main {
+    height: 100vh;
+}
+
+.main .navbar {
+    background-color: #212121;
+    border-radius: 0;
+}
+
+input, .btn {
+    border-radius: 0 !important;
+}
+
+.btn,
+.navbar-toggler {
+    cursor: pointer;
+}
