@@ -1,7 +1,10 @@
+'use strict';
+
+
 $(document).ready(function() {
     // set height & width of the map div w.r.t. window height & navbar dims
     function setMapDimensions() {
-        mapHeight = $(window).innerHeight() - $('#navbar').innerHeight();
+        let mapHeight = $(window).innerHeight() - $('#navbar').innerHeight();
         $('#map').css('min-height', mapHeight);
         $('#map').css('max-width', $('#navbar').innerWidth());
         if (typeof google != "undefined") {
@@ -38,11 +41,11 @@ function viewModel() {
             // nothing to do if already highlighted marker is clicked
             infoWindow.setContent('Loading...');
             infoWindow.marker = marker;
-            htmlContent = '<div class="info-window">' +
+            var htmlContent = '<div class="info-window">' +
                 '<h4 class="title">' + marker.title + '</h4>';
             // Foursquare API Client
-            fourSquareId = "HKLL4RY4CSVIM33GEHHMYQWAVVRBUH4ACQAYUE3YZLUYXXUO";
-            fourSquareSecret = "PM3VSO0VVTUIV0HZ0NPKKYTBGS2OYHVLOUZDRCE2STFU3LHU";
+            var fourSquareId = "HKLL4RY4CSVIM33GEHHMYQWAVVRBUH4ACQAYUE3YZLUYXXUO";
+            var fourSquareSecret = "PM3VSO0VVTUIV0HZ0NPKKYTBGS2OYHVLOUZDRCE2STFU3LHU";
             // URL for Foursquare API
             var apiUrl = 'https://api.foursquare.com/v2/venues/search?' +
                 'll=' + marker.lat + ',' + marker.lng +
@@ -57,11 +60,11 @@ function viewModel() {
                                           '<p>No extra info found.</p>');
                     return null;
                 }
-                response = marker.response.venues[0];
-                street = response.location.formattedAddress[0];
-                neighborhood = response.location.neighborhood || '';
+                let response = marker.response.venues[0];
+                var street = response.location.formattedAddress[0];
+                var neighborhood = response.location.neighborhood || '';
 
-                htmlContentFourSquare = '<p> Address: ' +
+                var htmlContentFourSquare = '<p> Address: ' +
                     street + neighborhood + '</p></div>';
 
                 infoWindow.setContent(htmlContent + htmlContentFourSquare);
