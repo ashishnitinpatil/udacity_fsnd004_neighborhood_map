@@ -61,11 +61,14 @@ function viewModel() {
                     return null;
                 }
                 let response = marker.response.venues[0];
-                var street = response.location.formattedAddress[0];
-                var neighborhood = response.location.neighborhood || '';
+                var lat = response.location.lat;
+                var lng = response.location.lng;
+                var address = response.location.address ||
+                    response.location.formattedAddress[0];
 
-                var htmlContentFourSquare = '<p> Address: ' +
-                    street + neighborhood + '</p></div>';
+                var htmlContentFourSquare = '<p><strong>Address:</strong> ' +
+                    address + '<br><strong>Lat:</strong> ' + lat +
+                    '<br><strong>Lng:</strong> ' + lng + '</p></div>';
 
                 infoWindow.setContent(htmlContent + htmlContentFourSquare);
             }).fail(function() {
