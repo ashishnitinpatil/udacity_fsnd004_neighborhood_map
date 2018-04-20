@@ -21,9 +21,12 @@
         </div>
         <form class="filter pt-2">
           <div class="input-group p-sm-1 p-md-2">
-            <input type="search" class="form-control" id="filter-input" placeholder="Filter by location">
+            <input type="search" class="form-control" id="filter-input" placeholder="Filter by location" data-bind="textInput: search, valueUpdate: 'afterkeydown'">
           </div>
         </form>
+        <div class="p-sm-1 p-md-2 locations" id="locations" data-bind="foreach: filteredLocations">
+            <button class="btn btn-default location mb-sm-1 mb-md-2" data-bind="text: title, click: bounce"></button>
+        </div>
       </div>
 
       <div class="col p-0 main">
@@ -42,7 +45,7 @@
 
   <!-- Start External JS dependencies (Bootstrap 4) -->
   <!-- Using complete (minified) jquery instead of the slim req by Bootstrap -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   <!-- End External JS dependencies -->
@@ -56,7 +59,7 @@
 
   <!-- Google Maps -->
   <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9iHEJWJxwE4GKWZ5v9kXeCHyst0aKE8g&v=3&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9iHEJWJxwE4GKWZ5v9kXeCHyst0aKE8g&v=3&callback=init">
   </script>
 </body>
 

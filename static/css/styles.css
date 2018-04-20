@@ -31,3 +31,19 @@ input,
 .navbar-toggler {
     cursor: pointer;
 }
+
+.info-window {
+    max-width: 250px;
+}
+
+.location {
+    width: 100%;
+    text-overflow: auto;
+}
+
+@media (min-width: 768px) {
+    .locations {
+        overflow-y: scroll;
+        max-height: calc(100vh - 120px);
+    }
+}
