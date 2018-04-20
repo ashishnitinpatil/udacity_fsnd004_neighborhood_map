@@ -14,7 +14,7 @@
 
 <body>
   <div class="container-fluid">
-    <div class="row vh-100">
+    <div class="row">
       <div class="col-sm-12 col-md-3 p-0 sidebar" id="sidebar">
         <div class="sidebar-header">
           <h4 class="text-center">Discover Dubai!</h4>
@@ -30,14 +30,14 @@
       </div>
 
       <div class="col p-0 main">
-        <nav class="navbar navbar-dark">
+        <nav class="navbar navbar-dark" id="navbar">
           <!-- Navbar content -->
           <button class="navbar-toggler" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         </nav>
         <main>
-          <div id="map"></div>
+          <div id="map">Google Maps did not load properly. Kindly refresh the page to retry.</div>
         </main>
       </div>
     </div>
@@ -57,9 +57,9 @@
   <script src="static/js/project.js"></script>
 
   <!-- Google Maps -->
-  <!-- <script async defer
+  <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9iHEJWJxwE4GKWZ5v9kXeCHyst0aKE8g&v=3&callback=initMap">
-  </script> -->
+  </script>
 </body>
 
 </html>
