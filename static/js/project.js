@@ -17,13 +17,15 @@ $(document).ready(function() {
 });
 
 function initMap() {
-    var home = {lat: 25.1241486, lng: 55.4002215};
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
-        center: home
+        zoom: 11,
+        center: {lat: 25.18, lng: 55.35}
     });
-    var marker = new google.maps.Marker({
-        position: home,
-        map: map
-    });
+
+    mosques.forEach(function(mosque) {
+        new google.maps.Marker({
+            position: {lat: mosque.lat, lng: mosque.lng},
+            map: map
+        });
+    })
 }
