@@ -47,3 +47,7 @@ input,
         max-height: calc(100vh - 120px);
     }
 }
+
+.locations button:hover {
+    border-color: red;
+}
