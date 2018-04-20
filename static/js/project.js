@@ -96,7 +96,8 @@ function viewModel() {
     self.initMap = function() {
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 11,
-            center: {lat: 25.24, lng: 55.35}
+            center: {lat: 25.24, lng: 55.35},
+            styles: styles
         });
 
         mosques.forEach(function(mosque, i) {
@@ -106,6 +107,8 @@ function viewModel() {
                 title: mosque.name,
                 lat: mosque.lat,
                 lng: mosque.lng,
+                icon: "https://www.google.ae/maps/vt/icon/name=assets/icons/poi/tactile/pinlet_shadow-2-medium.png,assets/icons/poi/tactile/pinlet_outline_v2-2-medium.png,assets/icons/poi/tactile/pinlet-2-medium.png,assets/icons/poi/quantum/pinlet/worship_islam_pinlet-2-medium.png&highlight=ff000000,ffffff,7b9eb0,ffffff&color=ff000000?scale=1",
+                // icon: "https://maps.google.com/mapfiles/kml/shapes/mosque_maps.png",
                 id: i,
             });
             marker.addListener('click', self.getInfoAndAnimate);
