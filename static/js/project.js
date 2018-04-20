@@ -8,12 +8,16 @@ $(document).ready(function() {
             google.maps.event.trigger(map, "resize");
         }
     };
+
+    // trigger once at start
     setMapDimensions();
 
+    // trigger on window resize
     $(window).resize(function() {
         setMapDimensions();
     });
 
+    // trigger on navbar toggle
     $('.navbar-toggler').click(function() {
         $('#sidebar').toggle();
         setMapDimensions();
